@@ -1,19 +1,23 @@
 package ProjectGame;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 abstract class CommonData{
-    int id;    
+    // int id;    
     int level = 1;
     int expirience = 0;
 
-    int healthPoint = new Random().nextInt(100, 150);
-    int damage;
+    int healthPoint;
     int deffence;
     int strange;
-    int stamina;
-    int speed;
+    int endurance;
     int agility;
+    int intelligence;
+    int faith;
+    int mana;
 
     String name;
     String className;
@@ -22,36 +26,40 @@ abstract class CommonData{
     String inventory;
 
     protected void characterStatus(){
-        System.out.println("ID: "+ id + "; Class: " + className + "; Name: " + name + "; Level:" + level);
+        if (this.healthPoint>0) {
+            System.out.println("Class: " + className + "; Name: " + name + "; Level:" + level + "\n");
+        }else{System.out.println("Character dead");}
+    }
+   
+    protected void characterStats(){
+        System.out.println(
+        "Health: " + healthPoint + ";" +"\n"+
+        "Diffence: " + deffence + ";"+ "\n"+
+        "Strange:" + strange + ";"+ "\n"+
+        "Endurance: " + endurance + ";"+ "\n"+
+        "Agility: " + agility + ";"+ "\n"+
+        "Intelligence: " + intelligence + ";"+ "\n"+
+        "Faith: " + faith + ";"+ "\n"+
+        "Mana: " + mana + "\n");
     }
 
-    protected CommonData createCharacter(String type, String name) {
-        this.name = name;
-        if (type.equalsIgnoreCase("peasant")) {
-            return new Peasant();
-        }if (type.equalsIgnoreCase("archer")) {
-            return new Archer();
-        }if (type.equalsIgnoreCase("crossbowman")) {
-            return new Crossbowman();
-        }if (type.equalsIgnoreCase("magician")) {
-            return new Magician();
-        }if (type.equalsIgnoreCase("monk")) {
-            return new Monk();
-        }if (type.equalsIgnoreCase("spearman")) {
-            return new Spearman();
-        }if (type.equalsIgnoreCase("warrior")) {
-            return new Warrior();
-        }if (type.equalsIgnoreCase("witch")) {
-            return new Witch();
-        }else{return null;}
+    protected void getLvl(){
+        System.out.println("Level: " + level + "\n" + "Expirience: " + expirience + "\n");
     }
-    
-    protected void attack(int damage){
-        if (this.healthPoint > 0) {
-            this.healthPoint -= damage;  
-        }
+
+    @Override
+    public String toString() {
+        return className + ": " + name;
+    }
+
+    protected void attack(CommonData target){
+        int damage = this.strange / 2;
+        target.checkDeath(damage);
+    }
+    protected void checkDeath(int damage){
+        this.healthPoint -= damage;
         if (this.healthPoint <= 0) {
-            System.out.println("You dead!");
+            System.out.println(this.name + " dead" + "\n");
         }
     }
     protected void healing(){
