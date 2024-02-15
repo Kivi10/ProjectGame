@@ -25,7 +25,7 @@ public abstract class CommonData{
     public void characterStatus(){
         if (this.healthPoint>0) {
             System.out.println("Class: " + className + "; Name: " + name + "; Level:" + level + "\n");
-        }else{System.out.println("Character dead");}
+        }else{System.out.println("Character dead" + "\n");}
     }
    
     public void characterStats(){
@@ -57,7 +57,7 @@ public abstract class CommonData{
         }
         }else{System.out.println("Target dead!" + "\n");}
     }
-    public boolean checkDeath(int damage){
+    protected boolean checkDeath(int damage){
         this.healthPoint -= damage;
         if (this.healthPoint <= 0) {
             System.out.println(this.name + " dead" + "\n");
@@ -65,10 +65,12 @@ public abstract class CommonData{
         }
         return false;
     }
-    public void healing(){
-        int heallingPoints = new Random().nextInt(10,20);
-        this.healthPoint += heallingPoints;
+    
+    private void healing(CommonData target){
+        int heallingPoints = level*10;
+        target.healthPoint += heallingPoints;
     }
+
     protected void expUp(int lvl){
         this.expirience += 100;
         double lvlUp = 50;

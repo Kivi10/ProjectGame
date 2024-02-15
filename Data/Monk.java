@@ -24,4 +24,8 @@ public class Monk extends CommonData {
     public String toString() {
         return "Monk: "+ name + "\n";
     }
+    public void healing(CommonData target){
+        int heallingPoints = level*10;
+        target.healthPoint += heallingPoints;
+    }
 }
