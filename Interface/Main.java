@@ -21,7 +21,6 @@ public class Main {
         
         archi.healthPoint = 100;
         archi.characterStats(); 
-        
         bob.attack(archi);
         archi.characterStats();
     }

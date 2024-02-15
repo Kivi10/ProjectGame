@@ -1,8 +1,6 @@
-package ProjectGame;
+package ProjectGame.Data;
 
 import java.util.Scanner;
-
-import ProjectGame.Data.CommonData;
 
 public class Warrior extends CommonData {
 

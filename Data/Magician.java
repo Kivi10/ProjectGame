@@ -1,8 +1,6 @@
-package ProjectGame;
+package ProjectGame.Data;
 
 import java.util.Scanner;
-
-import ProjectGame.Data.CommonData;
 
 public class Magician extends CommonData {
 
@@ -10,6 +8,7 @@ public class Magician extends CommonData {
         System.out.print("Введите имя персонажа! -> ");
         Scanner scanner = new Scanner(System.in);
         super.name = scanner.nextLine();
+        super.className = "Magician";
         super.healthPoint = 70;
         super.deffence = 20;
         super.strange = 40;
