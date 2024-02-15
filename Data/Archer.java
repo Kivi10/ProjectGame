@@ -23,6 +23,6 @@ public class Archer extends CommonData {
 
     @Override
     public String toString() {
-        return "Archer: "+ name;
+        return "Archer: "+ name + "\n";
     }
 }

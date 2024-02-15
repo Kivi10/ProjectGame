@@ -23,6 +23,6 @@ public class Crossbowman extends CommonData {
 
     @Override
     public String toString() {
-        return "Crossbowman: "+ name;
+        return "Crossbowman: "+ name + "\n";
     }
 }

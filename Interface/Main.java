@@ -10,18 +10,13 @@ public class Main {
         clearConsole();
         Peasant bob = new Peasant();
         System.out.println(bob);
-        bob.characterStatus();
-        bob.characterStats();
         bob.getLvl();
         CommonData archi = new Archer();
         System.out.println(archi);
-        archi.characterStatus();
-        archi.characterStats();
-        archi.getLvl();
         
-        archi.healthPoint = 100;
-        archi.characterStats(); 
-        bob.attack(archi);
+        bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);
+        bob.getLvl();
+        archi.getLvl();
         archi.characterStats();
     }
     

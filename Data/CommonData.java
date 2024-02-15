@@ -7,7 +7,7 @@ public abstract class CommonData{
     int level = 1;
     int expirience = 0;
 
-    public int healthPoint;
+    int healthPoint;
     int deffence;
     int strange;
     int endurance;
@@ -41,7 +41,7 @@ public abstract class CommonData{
     }
 
     public void getLvl(){
-        System.out.println("Level: " + level + "\n" + "Expirience: " + expirience + "\n");
+        System.out.println(name + "\n" +"Level: " + level + "\n" + "Expirience: " + expirience + "\n");
     }
 
     @Override
@@ -50,26 +50,32 @@ public abstract class CommonData{
     }
 
     public void attack(CommonData target){
-        int damage = this.strange / 2;
-        target.checkDeath(damage);
+        if (target.healthPoint >= 1) {
+          int damage = this.strange / 2;
+            if (target.checkDeath(damage) == true) {
+                expUp(target.level);  
+        }
+        }else{System.out.println("Target dead!" + "\n");}
     }
-    public void checkDeath(int damage){
+    public boolean checkDeath(int damage){
         this.healthPoint -= damage;
         if (this.healthPoint <= 0) {
             System.out.println(this.name + " dead" + "\n");
+            return true;
         }
+        return false;
     }
     public void healing(){
         int heallingPoints = new Random().nextInt(10,20);
         this.healthPoint += heallingPoints;
     }
-    public void getExp(){
-        this.expirience += new Random().nextInt(5,15);
+    protected void expUp(int lvl){
+        this.expirience += 100;
         double lvlUp = 50;
-        if (this.expirience >= lvlUp) {
+        while (this.expirience >= lvlUp) {
             this.level += 1;
             lvlUp *= 1.5;
-            this.expirience = 0;
+            expirience -= lvlUp;
         }
     }
 }

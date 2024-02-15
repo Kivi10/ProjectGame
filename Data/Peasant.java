@@ -22,6 +22,10 @@ public class Peasant extends CommonData {
 
     @Override
     public String toString() {
-        return "Peasant: "+ name;
+        return "Peasant: "+ name + "\n";
+    }
+    @Override
+    public void attack(CommonData target) {
+        super.attack(target);
     }
 }
