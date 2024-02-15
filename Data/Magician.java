@@ -2,6 +2,8 @@ package ProjectGame;
 
 import java.util.Scanner;
 
+import ProjectGame.Data.CommonData;
+
 public class Magician extends CommonData {
 
     public Magician (){

@@ -2,6 +2,8 @@ package ProjectGame;
 
 import java.util.Scanner;
 
+import ProjectGame.Data.CommonData;
+
 public class Monk extends CommonData {
     public Monk(){
         System.out.print("Введите имя персонажа! -> ");

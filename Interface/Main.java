@@ -1,10 +1,14 @@
-package ProjectGame;
+package ProjectGame.Interface;
+
+import ProjectGame.Data.Archer;
+import ProjectGame.Data.CommonData;
+import ProjectGame.Data.Peasant;
 
 public class Main {
 
     public static void main(String[] args) {
         clearConsole();
-        CommonData bob = new Peasant();
+        Peasant bob = new Peasant();
         System.out.println(bob);
         bob.characterStatus();
         bob.characterStats();
@@ -14,7 +18,7 @@ public class Main {
         archi.characterStatus();
         archi.characterStats();
         archi.getLvl();
-        // Не заню как сделать доступ к характеристикам для пользователя закрытым =(
+        
         archi.healthPoint = 100;
         archi.characterStats(); 
         

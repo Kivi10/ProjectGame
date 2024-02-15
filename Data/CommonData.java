@@ -1,16 +1,13 @@
-package ProjectGame;
+package ProjectGame.Data;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-abstract class CommonData{
+public abstract class CommonData{
     // int id;    
     int level = 1;
     int expirience = 0;
 
-    int healthPoint;
+    public int healthPoint;
     int deffence;
     int strange;
     int endurance;
@@ -25,13 +22,13 @@ abstract class CommonData{
     String weapon;
     String inventory;
 
-    protected void characterStatus(){
+    public void characterStatus(){
         if (this.healthPoint>0) {
             System.out.println("Class: " + className + "; Name: " + name + "; Level:" + level + "\n");
         }else{System.out.println("Character dead");}
     }
    
-    protected void characterStats(){
+    public void characterStats(){
         System.out.println(
         "Health: " + healthPoint + ";" +"\n"+
         "Diffence: " + deffence + ";"+ "\n"+
@@ -43,7 +40,7 @@ abstract class CommonData{
         "Mana: " + mana + "\n");
     }
 
-    protected void getLvl(){
+    public void getLvl(){
         System.out.println("Level: " + level + "\n" + "Expirience: " + expirience + "\n");
     }
 
@@ -52,21 +49,21 @@ abstract class CommonData{
         return className + ": " + name;
     }
 
-    protected void attack(CommonData target){
+    public void attack(CommonData target){
         int damage = this.strange / 2;
         target.checkDeath(damage);
     }
-    protected void checkDeath(int damage){
+    public void checkDeath(int damage){
         this.healthPoint -= damage;
         if (this.healthPoint <= 0) {
             System.out.println(this.name + " dead" + "\n");
         }
     }
-    protected void healing(){
+    public void healing(){
         int heallingPoints = new Random().nextInt(10,20);
         this.healthPoint += heallingPoints;
     }
-    protected void getExp(){
+    public void getExp(){
         this.expirience += new Random().nextInt(5,15);
         double lvlUp = 50;
         if (this.expirience >= lvlUp) {

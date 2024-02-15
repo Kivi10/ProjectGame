@@ -1,27 +1,27 @@
-package ProjectGame;
+package ProjectGame.Data;
 
 import java.util.Scanner;
 
-class Peasant extends CommonData {
-    protected Peasant(){
+public class Witch extends CommonData {
+    public Witch(){
         System.out.print("Введите имя персонажа! -> ");
         Scanner scanner = new Scanner(System.in);
         super.name = scanner.nextLine();
-        super.className = "Peasent";
-        super.healthPoint = 70;
-        super.deffence = 70;
-        super.strange = 60;
+        super.className = "Witch";
+        super.healthPoint = 80;
+        super.deffence = 50;
+        super.strange = 30;
         super.endurance = 60;
         super.agility = 50;
-        super.intelligence = 40;
-        super.faith = 90;
-        super.mana = 0;
+        super.intelligence = 60;
+        super.faith = 0;
+        super.mana = 80;
         super.level = 1;
         super.expirience = 0;
     }
 
     @Override
     public String toString() {
-        return "Peasant: "+ name;
+        return "Witch: "+ name;
     }
 }
