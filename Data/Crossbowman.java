@@ -4,10 +4,11 @@ package ProjectGame.Data;
 
 public class Crossbowman extends CommonData {
 
-    public Crossbowman(){
+    public Crossbowman(Coordinates coordinates){
         // System.out.print("Введите имя персонажа! -> ");
         // Scanner scanner = new Scanner(System.in);
         // super.name = scanner.nextLine();
+        super(coordinates);
         super.name = getName();
         super.className = "Crossbowman";
         super.healthPoint = 80;

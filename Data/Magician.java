@@ -4,10 +4,11 @@ package ProjectGame.Data;
 
 public class Magician extends CommonData {
 
-    public Magician (){
+    public Magician(Coordinates coordinates){
         // System.out.print("Введите имя персонажа! -> ");
         // Scanner scanner = new Scanner(System.in);
         // super.name = scanner.nextLine();
+        super(coordinates);
         super.name = getName();
         super.className = "Magician";
         super.healthPoint = 70;

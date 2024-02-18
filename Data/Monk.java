@@ -3,10 +3,11 @@ package ProjectGame.Data;
 // import java.util.Scanner;
 
 public class Monk extends CommonData {
-    public Monk(){
+    public Monk(Coordinates coordinates){
         // System.out.print("Введите имя персонажа! -> ");
         // Scanner scanner = new Scanner(System.in);
         // super.name = scanner.nextLine();
+        super(coordinates);
         super.name = getName();
         super.className = "Monk";
         super.healthPoint = 80;

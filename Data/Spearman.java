@@ -4,10 +4,11 @@ package ProjectGame.Data;
 
 public class Spearman extends CommonData {
 
-    public Spearman(){
+    public Spearman(Coordinates coordinates){
         // System.out.print("Введите имя персонажа! -> ");
         // Scanner scanner = new Scanner(System.in);
         // super.name = scanner.nextLine();
+        super(coordinates);
         super.name = getName();
         super.className = "Spearman";
         super.healthPoint = 90;

@@ -2,8 +2,12 @@ package ProjectGame.Data;
 
 import java.util.Random;
 
+import ProjectGame.Data.Info.Names;
+
 public abstract class CommonData{
     // int id;    
+    int x,y;
+
     int level = 1;
     int expirience = 0;
 
@@ -16,11 +20,21 @@ public abstract class CommonData{
     int faith;
     int mana;
 
-    String name;
+    public String name;
     String className;
 
     String weapon;
     String inventory;
+
+    Coordinates coordinates;
+
+    protected CommonData(Coordinates coordinates){
+        this.coordinates = coordinates;
+    }
+
+    public CommonData() {
+    }
+
 
     public void characterStatus(){
         if (this.healthPoint>0) {
