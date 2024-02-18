@@ -1,7 +1,6 @@
 package ProjectGame.Interface;
 
 import ProjectGame.Data.Archer;
-import ProjectGame.Data.CommonData;
 import ProjectGame.Data.Monk;
 import ProjectGame.Data.Peasant;
 
@@ -16,7 +15,7 @@ public class Main {
         System.out.println(archi);
         Monk mone = new Monk();
         
-        bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);
+        bob.attack(archi);bob.attack(archi);bob.attack(archi);bob.attack(archi);
         bob.getLvl();
         archi.getLvl();
         archi.characterStats();

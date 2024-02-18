@@ -1,13 +1,14 @@
 package ProjectGame.Data;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Crossbowman extends CommonData {
 
     public Crossbowman(){
-        System.out.print("Введите имя персонажа! -> ");
-        Scanner scanner = new Scanner(System.in);
-        super.name = scanner.nextLine();
+        // System.out.print("Введите имя персонажа! -> ");
+        // Scanner scanner = new Scanner(System.in);
+        // super.name = scanner.nextLine();
+        super.name = getName();
         super.className = "Crossbowman";
         super.healthPoint = 80;
         super.deffence = 40;

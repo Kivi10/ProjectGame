@@ -1,13 +1,14 @@
 package ProjectGame.Data;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Spearman extends CommonData {
 
     public Spearman(){
-        System.out.print("Введите имя персонажа! -> ");
-        Scanner scanner = new Scanner(System.in);
-        super.name = scanner.nextLine();
+        // System.out.print("Введите имя персонажа! -> ");
+        // Scanner scanner = new Scanner(System.in);
+        // super.name = scanner.nextLine();
+        super.name = getName();
         super.className = "Spearman";
         super.healthPoint = 90;
         super.deffence = 70;

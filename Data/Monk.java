@@ -1,12 +1,13 @@
 package ProjectGame.Data;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 public class Monk extends CommonData {
     public Monk(){
-        System.out.print("Введите имя персонажа! -> ");
-        Scanner scanner = new Scanner(System.in);
-        super.name = scanner.nextLine();
+        // System.out.print("Введите имя персонажа! -> ");
+        // Scanner scanner = new Scanner(System.in);
+        // super.name = scanner.nextLine();
+        super.name = getName();
         super.className = "Monk";
         super.healthPoint = 80;
         super.deffence = 70;
@@ -24,6 +25,8 @@ public class Monk extends CommonData {
     public String toString() {
         return "Monk: "+ name + "\n";
     }
+
+    @Override
     public void healing(CommonData target){
         int heallingPoints = level*10;
         target.healthPoint += heallingPoints;

@@ -57,6 +57,7 @@ public abstract class CommonData{
         }
         }else{System.out.println("Target dead!" + "\n");}
     }
+    
     protected boolean checkDeath(int damage){
         this.healthPoint -= damage;
         if (this.healthPoint <= 0) {
@@ -66,7 +67,7 @@ public abstract class CommonData{
         return false;
     }
     
-    private void healing(CommonData target){
+    protected void healing(CommonData target){
         int heallingPoints = level*10;
         target.healthPoint += heallingPoints;
     }
@@ -79,5 +80,9 @@ public abstract class CommonData{
             lvlUp *= 1.5;
             expirience -= lvlUp;
         }
+    }
+
+    protected static String getName(){
+        return String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);  
     }
 }
